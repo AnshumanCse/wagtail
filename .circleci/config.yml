@@ -116,6 +116,7 @@ jobs:
     steps:
       - checkout
       - run: pip install --user wheel boto3
+      - run: pip -v             #for checkout version -v or --version
       - run: npm install
       - run: npm run build
       - run: PYTHONPATH=. python scripts/nightly/get_version.py > __init__.py

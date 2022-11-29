@@ -48,9 +48,12 @@ type GetPageChildren = (
 export const getPageChildren: GetPageChildren = (id, options = {}) => {
   let url = `${ADMIN_API.PAGES}?child_of=${id}&for_explorer=1`;
 
+//   APIs collection
+  
   if (options.fields) {
     url += `&fields=parent,${window.encodeURIComponent(
       options.fields.join(','),
+    
     )}`;
   } else {
     url += '&fields=parent';
